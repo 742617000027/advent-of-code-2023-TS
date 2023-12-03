@@ -55,10 +55,7 @@ function getMaxVals( quantities : [ string, number ][] ) : ColorMap {
     return new Map( Array.from( LIMITS.keys() ).map( color => {
         return [
             color,
-            Math.max(
-                ...quantities
-                    .filter( ( [ c ] ) => c === color )
-                    .map( ( [ , v ] ) => v ) )
+            Math.max( ...quantities.filter( ( [ c ] ) => c === color ).map( ( [ , v ] ) => v ) )
         ];
     } ) );
 }
