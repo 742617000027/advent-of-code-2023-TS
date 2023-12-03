@@ -11,7 +11,7 @@ export async function solve( day : string ) {
     const validNumbers = getValidNumbers( rows, numbers, symbols );
     console.log( "Part 1:", validNumbers.reduce( ( a, b ) => a + b, 0 ) );
 
-    // Parts
+    // Part 2
     const gearRatios : number[] = getGearRatios( rows, numbers );
     console.log( "Part 2:", gearRatios.reduce( ( a, b ) => a + b, 0 ) );
 }
