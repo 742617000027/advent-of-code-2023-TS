@@ -1,6 +1,9 @@
 const fs = require('node:fs');
 
 export function readStrLines( day : string ) : string[] {
-    const puzzle  = fs.readFileSync( `./src/${day}/input` );
-    return puzzle.toString().split( "\n" );
+    return read( day ).split( "\n" );
+}
+
+export function read( day : string ) : string {
+    return fs.readFileSync( `./src/${day}/input`, "utf8" ).toString();
 }
