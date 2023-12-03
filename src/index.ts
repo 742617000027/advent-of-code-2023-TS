@@ -1,3 +1,5 @@
+import { DayModule } from "./Types";
+
 const DAY = "02";
 
 const main = ( async function () {

@@ -1,3 +1,3 @@
-interface DayModule {
+export interface DayModule {
     solve : ( day : string ) => Promise<void>;
 }
