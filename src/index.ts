@@ -1,6 +1,6 @@
 import { DayModule } from "./Types";
 
-const DAY = "02";
+const DAY = "03";
 
 const main = ( async function () {
     const module : DayModule = await import( `./${DAY}` );

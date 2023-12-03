@@ -1,0 +1,1 @@
+export type ElementInRow = [ string, [ number, number ] ];
