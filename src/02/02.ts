@@ -41,7 +41,10 @@ function getQuantities( cubesPart : string ) : [string, number][] {
 
 function possible( maxVals : ColorMap ) : boolean {
     return Array.from( maxVals.entries() )
-        .every( ( [ color, maxVal ] ) => LIMITS.has( color ) && maxVal <= LIMITS.get( color )! );
+        .every( ( [ color, maxVal ] ) => {
+            const limit = LIMITS.get( color );
+            return limit && maxVal <= limit;
+        } );
 }
 
 function power( maxVals : ColorMap ) : number {
