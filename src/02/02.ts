@@ -1,7 +1,8 @@
 import { readStrLines } from "../utils";
+import { ColorMap } from "./Types";
 
 
-const LIMITS = new Map<string, number>( [
+const LIMITS : ColorMap = new Map( [
     [ "red", 12 ],
     [ "green", 13 ],
     [ "blue", 14 ]
@@ -38,17 +39,17 @@ function getQuantities( cubesPart : string ) : [string, number][] {
     return quantities
 }
 
-function possible( maxVals : Map<string, number> ) : boolean {
+function possible( maxVals : ColorMap ) : boolean {
     return Array.from( maxVals.entries() )
         .every( ( [ color, maxVal ] ) => LIMITS.has( color ) && maxVal <= LIMITS.get( color )! );
 }
 
-function power( maxVals : Map<string, number> ) : number {
+function power( maxVals : ColorMap ) : number {
     return Array.from( maxVals.values() ).reduce( ( acc, cur ) => acc * cur, 1 );
 }
 
-function getMaxVals( quantities : [ string, number ][] ) : Map<string, number> {
-    return new Map<string, number>( Array.from( LIMITS.keys() ).map( color => {
+function getMaxVals( quantities : [ string, number ][] ) : ColorMap {
+    return new Map( Array.from( LIMITS.keys() ).map( color => {
         return [
             color,
             Math.max(

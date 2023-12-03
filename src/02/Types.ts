@@ -1,0 +1,1 @@
+export type ColorMap = Map<("red"|"green"|"blue"), number>;
